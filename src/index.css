@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* center a div */
+.MainInterface {
+    display: grid;
+    place-items: center;
+    margin-top: 50vh;
+}
+.emotions {
+    display: grid;
+    place-items: center;
+    margin-top: 50vh;
+}
