@@ -9,6 +9,7 @@ function Start() {
                 <GoogleLogin
                     onSuccess={credentialResponse => {
                         console.log(credentialResponse);
+                        console.log("Success!");
                     }}
                     onError={() => {
                         console.log('Login Failed');
