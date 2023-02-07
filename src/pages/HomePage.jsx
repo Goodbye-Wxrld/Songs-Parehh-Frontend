@@ -1,9 +1,14 @@
-import headphonesUrl from '../../assets/headphones.webp';
+import { useGoogleLogin } from '@react-oauth/google';
+import headphonesUrl from '../assets/headphones.webp';
 
-export default function LoginPage() {
+export default function HomePage() {
+    const login = useGoogleLogin({
+        onSuccess: (codeResponse) => console.log(codeResponse),
+    });
+
     return (
-        <div className="flex h-full w-full justify-center overflow-hidden bg-gradient-to-br from-[#FFE368] to-[#E5AD00] lg:items-center">
-            <div className="container relative flex w-full flex-col justify-center py-12 px-12 lg:flex-row-reverse lg:justify-between">
+        <div className="flex h-full w-full justify-center overflow-hidden lg:items-center">
+            <div className="py- container relative flex w-full flex-col justify-center px-12 lg:flex-row-reverse lg:justify-between">
                 <div className="relative z-10 flex h-5/6 flex-col items-center justify-between lg:w-1/2 lg:items-end lg:gap-10">
                     <div className="flex flex-col gap-5">
                         <p className="text-center font-heading text-6xl leading-snug lg:text-end lg:text-8xl">
@@ -15,10 +20,13 @@ export default function LoginPage() {
                     </div>
 
                     <div className="flex flex-col items-end gap-6">
-                        <button className="w-48 rounded-3xl bg-white py-2 text-3xl hover:bg-slate-50 active:bg-slate-100">
+                        <button
+                            onClick={() => login()}
+                            className="w-48 rounded-3xl bg-white py-2 text-xl hover:bg-slate-50 active:bg-slate-100 md:text-3xl"
+                        >
                             Login
                         </button>
-                        <button className="w-48 rounded-3xl bg-white py-2 text-3xl hover:bg-slate-50 active:bg-slate-100">
+                        <button className="w-48 rounded-3xl bg-white py-2 text-xl hover:bg-slate-50 active:bg-slate-100 md:text-3xl">
                             Register
                         </button>
                     </div>

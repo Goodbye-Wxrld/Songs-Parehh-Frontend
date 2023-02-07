@@ -1,7 +1,19 @@
-import LoginPage from './pages/Login';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HomePage from './pages/Homepage.jsx';
+import AnnotationPage from './pages/AnnotationPage.jsx';
 
-function App() {
-    return <LoginPage />;
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <HomePage />,
+    },
+    {
+        path: '/annotation',
+        element: <AnnotationPage />,
+    },
+]);
+
+export default function App() {
+    return <RouterProvider router={router} />;
 }
-
-export default App;
