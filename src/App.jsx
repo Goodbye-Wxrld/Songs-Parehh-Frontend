@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/Homepage.jsx';
+import HomePage from './pages/HomePage.jsx';
 import AnnotationPage from './pages/AnnotationPage.jsx';
 
 const router = createBrowserRouter([

@@ -8,8 +8,8 @@ export default function HomePage() {
 
     return (
         <div className="flex h-full w-full justify-center overflow-hidden lg:items-center">
-            <div className="py- container relative flex w-full flex-col justify-center px-12 lg:flex-row-reverse lg:justify-between">
-                <div className="relative z-10 flex h-5/6 flex-col items-center justify-between lg:w-1/2 lg:items-end lg:gap-10">
+            <div className="container relative flex w-full flex-col px-12 lg:flex-row-reverse lg:justify-between">
+                <div className="relative z-10 flex h-5/6 flex-col items-center justify-around gap-10 lg:w-1/2 lg:items-end lg:gap-10">
                     <div className="flex flex-col gap-5">
                         <p className="text-center font-heading text-6xl leading-snug lg:text-end lg:text-8xl">
                             Songs Parehhh
