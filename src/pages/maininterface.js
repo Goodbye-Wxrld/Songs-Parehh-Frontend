@@ -47,59 +47,83 @@ function MainInterface() {
             />
             {/* emotions are anger disgust fear happiness sadness surprise*/}
             <div className="emotions">
-                <input
-                    type="checkbox"
-                    id="Anger"
-                    name="Anger"
-                    value="Anger"
-                    checked={isAngerChecked}
-                    onChange={handleAngerOnChange}
-                />
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        id="Anger"
+                        name="Anger"
+                        value="Anger"
+                        checked={isAngerChecked}
+                        onChange={handleAngerOnChange}
+                    />
+                    <span class="slider"></span>
+                    <span class="labels" data-on="Present" data-off="None"></span>
+                </label>
                 Anger
-                <input
-                    type="checkbox"
-                    id="Disgust"
-                    name="Disgust"
-                    value="Disgust"
-                    checked={isDisgustChecked}
-                    onChange={handleDisgustOnChange}
-                />
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        id="Disgust"
+                        name="Disgust"
+                        value="Disgust"
+                        checked={isDisgustChecked}
+                        onChange={handleDisgustOnChange}
+                    />
+                    <span class="slider"></span>
+                    <span class="labels" data-on="Present" data-off="None"></span>
+                </label>
                 Disgust
-                <input
-                    type="checkbox"
-                    id="Fear"
-                    name="Fear"
-                    value="Fear"
-                    checked={isFearChecked}
-                    onChange={handleFearOnChange}
-                />
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        id="Fear"
+                        name="Fear"
+                        value="Fear"
+                        checked={isFearChecked}
+                        onChange={handleFearOnChange}
+                    />
+                    <span class="slider"></span>
+                    <span class="labels" data-on="Present" data-off="None"></span>
+                </label>
                 Fear
-                <input
-                    type="checkbox"
-                    id="Happiness"
-                    name="Happiness"
-                    value="Happiness"
-                    checked={isHappinessChecked}
-                    onChange={handleHappinessOnChange}
-                />
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        id="Happiness"
+                        name="Happiness"
+                        value="Happiness"
+                        checked={isHappinessChecked}
+                        onChange={handleHappinessOnChange}
+                    />
+                    <span class="slider"></span>
+                    <span class="labels" data-on="Present" data-off="None"></span>
+                </label>
                 Happiness
-                <input
-                    type="checkbox"
-                    id="Sadness"
-                    name="Sadness"
-                    value="Sadness"
-                    checked={isSadnessChecked}
-                    onChange={handleSadnessOnChange}
-                />
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        id="Sadness"
+                        name="Sadness"
+                        value="Sadness"
+                        checked={isSadnessChecked}
+                        onChange={handleSadnessOnChange}
+                    />
+                    <span class="slider"></span>
+                    <span class="labels" data-on="Present" data-off="None"></span>
+                </label>
                 Sadness
-                <input
-                    type="checkbox"
-                    id="Surprise"
-                    name="Surprise"
-                    value="Surprise"
-                    checked={isSurpriseChecked}
-                    onChange={handleSurpriseOnChange}
-                />
+                <label class="toggle">
+                    <input
+                        type="checkbox"
+                        id="Surprise"
+                        name="Surprise"
+                        value="Surprise"
+                        checked={isSurpriseChecked}
+                        onChange={handleSurpriseOnChange}
+                    />
+                    <span class="slider"></span>
+                    <span class="labels" data-on="Present" data-off="None"></span>
+                </label>
                 Surprise
             </div>
         </div>

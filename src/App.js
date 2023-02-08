@@ -6,6 +6,7 @@ import Start from "./pages/Start.js";
 import Instructions from "./pages/Instructions.js";
 import Pagenotfound from "./pages/PageNotFound.js";
 import MainInterface from "./pages/maininterface.js";
+import ConsentForm from "./pages/ConsentForm.js";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" exact element={<Start />} />
+                <Route path="/ConsentForm" exact element={<ConsentForm />} />
                 <Route path="/Instructions" exact element={<Instructions />} />
                 <Route path="/MainInterface" exact element={<MainInterface />} />
                 <Route path="*" exact element={<Pagenotfound />} />
