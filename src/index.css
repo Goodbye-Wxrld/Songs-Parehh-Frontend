@@ -11,4 +11,5 @@
 html,
 body {
     @apply h-full;
+    -webkit-tap-highlight-color: transparent;
 }

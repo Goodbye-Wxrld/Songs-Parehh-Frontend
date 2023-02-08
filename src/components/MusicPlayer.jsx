@@ -5,7 +5,7 @@ import AudioWavUrl from '../assets/4.wav';
 import vinylUrl from '../assets/vinyl.png';
 import MuteButton from '../components/MuteButton';
 import PlayButton from '../components/PlayButton';
-import ReplayButton from '../components/RestartButton';
+import ReplayButton from './ReplayButton';
 
 function MusicPlayer() {
     const audioRef = useRef(null);
@@ -59,13 +59,14 @@ function MusicPlayer() {
     };
 
     const handleReplay = () => {
-        audioRef.current.fastSeek(0);
+        audioRef.current.currentTime = 0;
     };
 
     return (
         <>
             <audio
-                src={AudioWavUrl}
+                // src={AudioWavUrl}
+                src="https://annotationsgoodbye.s3.ap-southeast-1.amazonaws.com/1.wav"
                 ref={audioRef}
                 onTimeUpdate={handleProgressUpdate}
                 onLoadedMetadata={handleMetadata}

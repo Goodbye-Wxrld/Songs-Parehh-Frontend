@@ -3,7 +3,7 @@ export default function ReplayButton({ onClick }) {
         <div className="h-5 w-5 cursor-pointer lg:h-8 lg:w-8" onClick={onClick}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="ionicon stroke-black hover:stroke-yellow-700"
+                class="ionicon stroke-black lg:hover:stroke-yellow-700"
                 viewBox="0 0 512 512"
             >
                 <title>Refresh</title>
@@ -21,7 +21,7 @@ export default function ReplayButton({ onClick }) {
                     stroke-width="32"
                     d="M256 58l80 80-80 80"
                 />
-            </svg>{' '}
+            </svg>
         </div>
     );
 }
