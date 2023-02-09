@@ -1,11 +1,15 @@
 import { useGoogleLogin } from '@react-oauth/google';
 import headphonesUrl from '../assets/headphones.webp';
 
+
 export default function HomePage() {
     const login = useGoogleLogin({
-        onSuccess: (codeResponse) => console.log(codeResponse),
-    });
+        onSuccess: (codeResponse) => {
+            console.log(codeResponse);
+        }
 
+    });
+    
     return (
         <div className="flex h-full w-full justify-center overflow-hidden lg:items-center">
             <div className="container relative flex w-full flex-col px-12 lg:flex-row-reverse lg:justify-between">
@@ -26,7 +30,9 @@ export default function HomePage() {
                         >
                             Login
                         </button>
-                        <button className="w-48 rounded-3xl bg-white py-2 text-xl hover:bg-slate-50 active:bg-slate-100 md:text-3xl">
+                        <button 
+                            className="w-48 rounded-3xl bg-white py-2 text-xl hover:bg-slate-50 active:bg-slate-100 md:text-3xl"
+                        >
                             Register
                         </button>
                     </div>
