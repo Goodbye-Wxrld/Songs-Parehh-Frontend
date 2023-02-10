@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import EmotionButton from '../components/EmotionButton';
 import Modal from '../components/Modal';
 
@@ -9,6 +9,14 @@ import closeUrl from '../assets/close.png';
 export default function AnnotationPage() {
     const [annotations, setAnnotations] = useState(new Set());
     const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_URL}/music/next-annotation`, {
+            credentials: 'include',
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+    }, []);
 
     const handleAnnotate = (emotion) => {
         setAnnotations((annotations) => {
@@ -104,6 +112,7 @@ export default function AnnotationPage() {
                                     fill="currentColor"
                                 />
                             </svg>
+
                             <div>
                                 <p className="lg:text-xl">
                                     Songs completed: 69
@@ -132,11 +141,11 @@ export default function AnnotationPage() {
             </div>
             {showModal && (
                 <Modal>
-                    <div className="relative px-2 py-6">
+                    <div className="relative px-5 py-6 md:px-6  md:py-8">
                         <img
                             src={closeUrl}
                             alt="close button"
-                            className="absolute top-0 right-0 h-5 w-5 cursor-pointer"
+                            className="absolute top-0 right-2 h-5 w-5 cursor-pointer"
                             onClick={() => setShowModal(false)}
                         />
                         <div className="flex flex-col gap-1 lg:gap-3">
