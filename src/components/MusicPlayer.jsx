@@ -7,7 +7,7 @@ import MuteButton from '../components/MuteButton';
 import PlayButton from '../components/PlayButton';
 import ReplayButton from './ReplayButton';
 
-function MusicPlayer() {
+function MusicPlayer({ src, onEnd, onCanPlay }) {
     const audioRef = useRef(null);
 
     const [isPlaying, setIsPlaying] = useState(false);
@@ -56,6 +56,7 @@ function MusicPlayer() {
 
     const handleAudioEnd = () => {
         setIsPlaying(false);
+        onEnd();
     };
 
     const handleReplay = () => {
@@ -65,12 +66,12 @@ function MusicPlayer() {
     return (
         <>
             <audio
-                // src={AudioWavUrl}
-                src="https://annotationsgoodbye.s3.ap-southeast-1.amazonaws.com/1.wav"
+                src={src}
                 ref={audioRef}
                 onTimeUpdate={handleProgressUpdate}
                 onLoadedMetadata={handleMetadata}
                 onEnded={handleAudioEnd}
+                onCanPlay={onCanPlay}
             ></audio>
             <div className="flex justify-center">
                 <img

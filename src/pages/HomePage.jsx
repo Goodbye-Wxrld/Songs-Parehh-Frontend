@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLoaderData } from 'react-router-dom';
 import clsx from 'clsx';
 
+// import useFetch from '../hooks/useFetch';
+
 import headphonesUrl from '../assets/headphones.webp';
 import Modal from '../components/Modal';
 import closeUrl from '../assets/close.png';
@@ -10,6 +12,7 @@ import closeUrl from '../assets/close.png';
 export default function HomePage() {
     const sessionData = useLoaderData();
 
+    // const [data, isLoading] = useFetch('login'. {method: 'POST', });
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
