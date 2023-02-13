@@ -3,9 +3,6 @@ export async function fetchMusicToBeAnnotated() {
         `${import.meta.env.VITE_API_URL}/music/next-annotation`,
         {
             credentials: 'include',
-            headers: {
-                'Access-Control-Allow-Credentials': true,
-            },
         }
     );
 
@@ -18,9 +15,6 @@ export async function fetchMusicToBeAnnotated() {
 export async function fetchUserStats() {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/user/stats`, {
         credentials: 'include',
-        headers: {
-            'Access-Control-Allow-Credentials': true,
-        },
     });
 
     if (!res.ok) console.log(await res.text());

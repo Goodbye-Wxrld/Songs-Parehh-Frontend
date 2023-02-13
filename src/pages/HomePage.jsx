@@ -33,7 +33,6 @@ export default function HomePage() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Credentials': true,
             },
             body: JSON.stringify({
                 token: access_token,
