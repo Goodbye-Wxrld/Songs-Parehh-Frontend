@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 
-export default function ErrorPage() {
+export default function ErrorPage({ message }) {
     const navigate = useNavigate();
     return (
         <div className="flex h-full items-center justify-center p-3 md:p-8">
@@ -13,9 +13,7 @@ export default function ErrorPage() {
                         </span>
                         ps!
                     </p>
-                    <p className="text-xl md:text-3xl lg:text-6xl">
-                        Something went horribly wrong.
-                    </p>
+                    <p className="text-xl md:text-3xl lg:text-6xl">{message}</p>
                     <button
                         className="w-2/3 rounded-3xl bg-yellow-600 px-6 py-3 text-lg md:text-2xl lg:text-3xl"
                         onClick={() => navigate('/')}

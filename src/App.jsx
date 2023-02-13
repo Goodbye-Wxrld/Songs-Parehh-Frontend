@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
         loader: async ({ request }) => {
             // loaders can be async functions
-            console.log('request.signal:', request.signal);
+            // console.log('request.signal:', request.signal);
             const res = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
                 method: 'POST',
                 signal: request.signal,
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             if (data.hasExistingSession) return redirect('/annotation');
             return null;
         },
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPage message={'Something went horribly wrong.'} />,
     },
     {
         path: '/annotation',
@@ -35,7 +35,12 @@ const router = createBrowserRouter([
             const userData = await fetchUserStats();
             return { musicData, userData };
         },
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPage message={'Something went horribly wrong.'} />,
+    },
+    {
+        path: '*',
+        element: <ErrorPage message={'Page not found.'} />,
+        errorElement: <ErrorPage message={'Something went horribly wrong.'} />,
     },
 ]);
 
