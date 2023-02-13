@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             const userData = await fetchUserStats();
             return { musicData, userData };
         },
-        // errorElement: <ErrorPage message={'Something went horribly wrong.'} />,
+        errorElement: <ErrorPage message={'Something went horribly wrong.'} />,
     },
     {
         path: '*',
