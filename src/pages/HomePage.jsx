@@ -152,10 +152,10 @@ function InformedConsentModal({ onSuccess, onClose }) {
             <img
                 src={closeUrl}
                 alt=""
-                className="absolute top-5 right-7 w-5 cursor-pointer"
+                className="absolute top-5 right-6 z-10 w-5 cursor-pointer"
                 onClick={onClose}
             />
-            <div className="relative max-h-[550px] overflow-y-scroll px-3 pt-3 md:px-6 ">
+            <div className="relative z-0 max-h-[550px] overflow-y-scroll px-3 pt-3 md:px-6">
                 <div className="flex flex-col gap-7">
                     <div className="flex flex-col gap-2">
                         <p className="text-2xl">Informed Consent Form</p>
