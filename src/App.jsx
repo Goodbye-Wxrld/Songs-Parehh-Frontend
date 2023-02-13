@@ -34,9 +34,25 @@ const router = createBrowserRouter([
         path: '/annotation',
         element: <AnnotationPage />,
         loader: async ({ request }) => {
-            const musicData = await fetchMusicToBeAnnotated();
-            const userData = await fetchUserStats();
-            return { musicData, userData };
+            const [musicData, userData] = await Promise.all([
+                fetchMusicToBeAnnotated(),
+                fetchUserStats(),
+            ]);
+            const res = await fetch(`./login`, {
+                method: 'POST',
+                signal: request.signal,
+                headers: {
+                    'Access-Control-Allow-Credentials': true,
+                },
+                credentials: 'include',
+            });
+
+            const data = await res.json();
+            return {
+                musicData,
+                userData,
+                hasExistingSession: data.hasExistingSession,
+            };
         },
         errorElement: <ErrorPage message={'Something went horribly wrong.'} />,
     },

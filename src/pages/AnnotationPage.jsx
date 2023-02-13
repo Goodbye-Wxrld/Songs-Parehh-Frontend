@@ -11,7 +11,7 @@ import closeUrl from '../assets/close.png';
 
 export default function AnnotationPage() {
     //initial state
-    const { musicData, userData } = useLoaderData();
+    const { musicData, userData, hasExistingSession } = useLoaderData();
 
     //states
     const [musicId, setMusicId] = useState(musicData.musicId);
@@ -23,7 +23,7 @@ export default function AnnotationPage() {
     const [hasMusicEnded, setHasMusicEnded] = useState(false);
     const [annotations, setAnnotations] = useState(new Set());
 
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(!hasExistingSession);
     const [showPopup, setShowPopup] = useState(false);
 
     //derived states
