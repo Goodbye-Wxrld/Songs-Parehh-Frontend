@@ -8,6 +8,7 @@ export async function fetchMusicToBeAnnotated() {
 
     if (!res.ok) console.log(await res.text());
     else var data = await res.json();
+    console.log('music data', data);
     return data;
 }
 
@@ -18,5 +19,6 @@ export async function fetchUserStats() {
 
     if (!res.ok) console.log(await res.text());
     else var data = await res.json();
+    console.log('user data', data);
     return data;
 }
