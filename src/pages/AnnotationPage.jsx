@@ -54,7 +54,7 @@ export default function AnnotationPage() {
     };
 
     const handleSubmit = async () => {
-        await fetch(`${import.meta.env.VITE_API_URL}/user/submit`, {
+        await fetch(`./user/submit`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

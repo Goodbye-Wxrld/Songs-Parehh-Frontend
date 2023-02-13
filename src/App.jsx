@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         loader: async ({ request }) => {
             // loaders can be async functions
             // console.log('request.signal:', request.signal);
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+            const res = await fetch(`./login`, {
                 method: 'POST',
                 signal: request.signal,
                 headers: {

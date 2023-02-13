@@ -1,10 +1,7 @@
 export async function fetchMusicToBeAnnotated() {
-    const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/music/next-annotation`,
-        {
-            credentials: 'include',
-        }
-    );
+    const res = await fetch(`./music/next-annotation`, {
+        credentials: 'include',
+    });
 
     if (!res.ok) console.log(await res.text());
     else var data = await res.json();
@@ -13,7 +10,7 @@ export async function fetchMusicToBeAnnotated() {
 }
 
 export async function fetchUserStats() {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/user/stats`, {
+    const res = await fetch(`./user/stats`, {
         credentials: 'include',
     });
 

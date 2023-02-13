@@ -22,9 +22,9 @@ export default function HomePage() {
 
     const establishSession = async (googleSignInResponse, method) => {
         if (method == 'login') {
-            var URL = `${import.meta.env.VITE_API_URL}/login`;
+            var URL = `./login`;
         } else if (method == 'register') {
-            var URL = `${import.meta.env.VITE_API_URL}/user/register`;
+            var URL = `./user/register`;
         }
 
         const { access_token } = googleSignInResponse;
